@@ -5,5 +5,5 @@ const hasSpecificLength = ({ target, length }) => {
 }
 
 module.exports = {
-    hasSpecificLength
+  hasSpecificLength
 }

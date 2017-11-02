@@ -2,8 +2,6 @@ const { GraphQLSchema, GraphQLObjectType, GraphQLString } = require('graphql')
 
 const { getCharacterInfos } = require('../services/character.service')
 
-const ValidationError = require('../models/ValidationError')
-
 const CharacterType = new GraphQLObjectType({
   name: 'character',
   fields: () => ({

@@ -1,54 +1,54 @@
-const { getHTMLElement, getTextContent } = require('../utils/dom.utils')
+const { getTextContent } = require('../utils/dom.utils')
 
 class Character {
-  constructor(dom) {
+  constructor (dom) {
     this._dom = dom
   }
 
-  playerDoesntExists() {
+  playerDoesntExists () {
     const selector = `#characters > div.Border_2 > div > div > table > tbody > tr:nth-child(1) > td > b`
     const title = getTextContent(this._dom, selector)
     return /not find/gi.test(title)
   }
 
-  get name() {
+  get name () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(2) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
-  get sex() {
+  get sex () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(3) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
-  get vocation() {
+  get vocation () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(4) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
-  get level() {
+  get level () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(5) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
-  get achievementPoints() {
+  get achievementPoints () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(6) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
-  get world() {
+  get world () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(7) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
-  get residence() {
+  get residence () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(8) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
-  get lastLogin() {
+  get lastLogin () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(9) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
-  get accountStatus() {
+  get accountStatus () {
     const selector = `#characters > div.Border_2 > div > div > table:nth-child(1) > tbody > tr:nth-child(10) > td:nth-child(2)`
     return getTextContent(this._dom, selector)
   }
 
-  get allCharacterInformation() {
+  get allCharacterInformation () {
     return {
       name: this.name,
       sex: this.sex,
@@ -58,7 +58,7 @@ class Character {
       world: this.world,
       residence: this.residence,
       lastLogin: this.lastLogin,
-      accountStatus: this.accountStatus,
+      accountStatus: this.accountStatus
     }
   }
 }
